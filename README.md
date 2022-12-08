@@ -1,1 +1,0 @@
-# nsytm.github.io
