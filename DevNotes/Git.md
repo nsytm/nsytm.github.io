@@ -35,6 +35,7 @@ git config user.name
 git config user.email
 ```
 * git config 命令修改用户名、邮箱
+* 
 ```
 # 仅对当前仓库有效
 git config --local user.name "name"
