@@ -29,16 +29,20 @@ git config --list
 ```
 ## 二、Git操作
 ### 1、查看和修改用户名、邮箱
-
+* git config 命令查看用户名、邮箱
+```
+git config user.name
+git config user.email
+```
 * git config 命令修改用户名、邮箱
 ```
 # 仅对当前仓库有效
-git config --local user.name "name"
-git config --local user.email "email"
+git config --local user.name xxx
+git config --local user.email xxx
 
 # 对当前用户的所有仓库有效
-git config --global user.name "name"
-git config --global user.email "email"
+git config --global user.name xxx
+git config --global user.email xxx
 ```
 ### 2、首次使用，克隆代码
 
