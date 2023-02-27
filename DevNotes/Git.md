@@ -16,8 +16,8 @@ nav_order: 1
 
 ---
 
-
-# Git入门
+Git安装
+--------------
 ## 一、Git安装
 windows安装：进入网站 https://git-scm.com/ 下载安装，然后在cmd命令行配置。
 ```
