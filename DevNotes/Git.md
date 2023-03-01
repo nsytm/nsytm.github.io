@@ -1,5 +1,8 @@
 ---
-layout: default title: Git parent: DevNotes nav_order: 1
+layout: default
+title: Git
+parent: DevNotes
+nav_order: 1
 ---
 
 # Git
