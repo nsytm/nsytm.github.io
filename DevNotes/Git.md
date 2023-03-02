@@ -61,7 +61,8 @@ git clone <url>
 # 指定项目名称为本地项目目录
 git clone <url> projectname
 
-# 拉取指定分支的代码
+# 拉取指定分支的代码 -b:表示选择分支
+git clone -b <branchname> <url>
 ```
 
 ### update pgl 2022/3/1
