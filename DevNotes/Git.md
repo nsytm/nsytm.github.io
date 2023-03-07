@@ -61,25 +61,99 @@ git clone <url>
 # 指定项目名称为本地项目目录
 git clone <url> projectname
 
-# 拉取指定分支的代码 -b:表示选择分支
+# 拉取指定分支的代码, -b:表示选择分支
 git clone -b <branchname> <url>
 ```
 
-### update pgl 2022/3/1
+#### 2.2 克隆代码报错
 
-3. 克隆代码失败
+```
+# 报错一
+fatal: unable to access 'https://github.com/nsytm/remote.repository.name.git/': SSL certificate problem: unable to get local issuer certificate
 
-   ```
-   fatal: unable to access 'https://github.com/nsytm/nsytm.github.io.git/': SSL certificate
-    problem: unable to get local issuer certificate
-   
-   # 解决方法，取消 git 对 SSL 的检验
-   git config --global http.sslVerify "false"
-   ```
+# 解决方法, 取消 git 对 SSL 的检验
+git config --global http.sslVerify "false"
 
-4.
+# 报错二
 
-### 3、分支操作命令
+```
+
+### 3.第一次使用git提交代码
+
+#### 3.1 创建并进入目录
+
+```
+# 创建目录, -p:表示递归创建
+mkdir -p /e/github/test
+```
+
+#### 3.2 创建本地仓库, 添加远程仓库
+
+##### 3.2.1 方式一
+
+```
+# 初始化当前目录为本地仓库, 生成.git配置文件 (可以使用 ls -ah 命令查看.git文件)
+git init
+
+# 添加远程仓库, shortname:远程仓库别名, 一般使用origin来代替url, url:远程仓库地址
+git remote add <shortname> <url>
+```
+
+##### 3.2.2 方式二
+
+```
+# 默认会拉取远程仓库中的所有内容
+git clone xxx
+
+# git clone是一个复合命令, 相当于连续执行了下面三个命令
+git remote add origin https://github.com/nsytm/remote.repository.name.git
+git fetch
+git checkout master
+```
+
+#### 3.3 git add 命令可将文件添加到暂存区
+
+```
+# 添加一个或多个文件到暂存区
+git add [file1] [file2] ...
+git add qq.txt weixin.txt
+
+# 添加指定目录到暂存区, 包括子目录
+git add [dir]
+git add /e/github/he
+
+# 添加当前目录下的所有文件到暂存区
+git add .
+```
+
+#### 3.4 git commit 命令将暂存区内容添加到本地仓库中
+
+注意: 执行 commit 提交代码前, 要先拉取最新的代码, 使用 git fetch 或 git pull 命令
+
+```
+# 提交暂存区所有文件到本地仓库中, message:表示备注信息
+git commit -m [message]
+
+# 提交暂存区的指定文件到仓库区
+git commit [file1] [file2] ... -m [message]
+
+-a:表示修改或删除文件后不需要执行 git add 命令, 可以直接执行 commit, 但是新文件还是要 add
+git commit -a
+```
+
+#### 3.4 git push 命令用于从将本地的分支版本上传到远程并合并
+
+```
+# 提交代码到远程仓库
+git push <远程主机名> <本地分支名>:<远程分支名>
+
+# 如果本地分支名与远程分支名相同，则可以省略冒号
+git push <远程主机名> <本地分支名>
+```
+
+## update pgl 2023/03/07
+
+### 分支命令
 
 * 查看分支
 
