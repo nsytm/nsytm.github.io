@@ -17,11 +17,11 @@ nav_order: 1
 ---
 
 
-## 1.Git安装与配置
+### 1.Git安装与配置
 
 windows安装：进入网站 https://git-scm.com/ 下载安装，然后在cmd命令行配置。
 
-### 1.1 配置用户名和邮箱
+#### 1.1 配置用户名和邮箱
 
 ```
 # 仅对当前仓库有效
@@ -33,7 +33,7 @@ git config --global user.name "pgl"
 git config --global user.email "501143xxx@qq.com"
 ```
 
-### 1.2 查看配置信息
+#### 1.2 查看配置信息
 
 ```
 # 检查信息是否写入成功
@@ -44,7 +44,7 @@ git config user.name
 git config user.email
 ```
 
-## 2.第一次使用git克隆项目到本地
+### 2.第一次使用git克隆项目到本地
 
 #### 2.1 右键点击git bash here, 进入git命令窗口, 指定本地路径, 使用一个空的文件夹来存放项目代码
 
@@ -89,7 +89,7 @@ mkdir -p /e/github/test
 
 #### 3.2 创建本地仓库, 添加远程仓库
 
-##### 3.2.1 方式一
+###### 3.2.1 方式一
 
 ```
 # 初始化当前目录为本地仓库, 生成.git配置文件 (可以使用 ls -ah 命令查看.git文件)
@@ -99,7 +99,7 @@ git init
 git remote add <shortname> <url>
 ```
 
-##### 3.2.2 方式二
+###### 3.2.2 方式二
 
 ```
 # 默认会拉取远程仓库中的所有内容
@@ -128,9 +128,9 @@ git add .
 
 #### 3.4 git commit 命令将暂存区内容添加到本地仓库中
 
+```
 注意: 执行 commit 提交代码前, 要先拉取最新的代码, 使用 git fetch 或 git pull 命令
 
-```
 # 提交暂存区所有文件到本地仓库中, message:表示备注信息
 git commit -m [message]
 
