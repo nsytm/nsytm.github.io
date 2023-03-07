@@ -17,11 +17,11 @@ nav_order: 1
 ---
 
 
-### 1.Git安装与配置
+## 1.Git安装与配置
 
 windows安装：进入网站 https://git-scm.com/ 下载安装，然后在cmd命令行配置。
 
-#### 1.1 配置用户名和邮箱
+### 1.1 配置用户名和邮箱
 
 ```
 # 仅对当前仓库有效
@@ -33,7 +33,7 @@ git config --global user.name "pgl"
 git config --global user.email "501143xxx@qq.com"
 ```
 
-#### 1.2 查看配置信息
+### 1.2 查看配置信息
 
 ```
 # 检查信息是否写入成功
@@ -44,7 +44,7 @@ git config user.name
 git config user.email
 ```
 
-### 2.第一次使用git克隆项目到本地
+## 2.第一次使用git克隆项目到本地
 
 #### 2.1 右键点击git bash here, 进入git命令窗口, 指定本地路径, 使用一个空的文件夹来存放项目代码
 
