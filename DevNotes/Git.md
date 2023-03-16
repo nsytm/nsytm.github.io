@@ -103,7 +103,7 @@ git remote add <shortname> <url>
 
 ```
 # 默认会拉取远程仓库中的所有内容
-git clone xxx
+git clone [url]
 
 # git clone是一个复合命令, 相当于连续执行了下面三个命令
 git remote add origin https://github.com/nsytm/remote.repository.name.git
@@ -150,6 +150,23 @@ git push <远程主机名> <本地分支名>:<远程分支名>
 # 如果本地分支名与远程分支名相同，则可以省略冒号
 git push <远程主机名> <本地分支名>
 ```
+
+### 4.git基本命令
+
+#### 4.1 创建仓库命令
+
+```
+# 初始化仓库
+git init
+
+# 拷贝一份远程仓库，也就是下载一个项目
+git clone [url]
+```
+
+#### 4.1 创建仓库命令
+
+
+### 5.git分支管理
 
 ## update pgl 2023/03/07
 
