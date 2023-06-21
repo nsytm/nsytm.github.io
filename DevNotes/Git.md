@@ -44,7 +44,7 @@ git config user.name
 git config user.email
 ```
 
-### 2.第一次使用git克隆项目到本地
+### 2.使用Git克隆项目到本地
 
 #### 2.1 右键点击git bash here, 进入git命令窗口, 指定本地路径, 使用一个空的文件夹来存放项目代码
 
@@ -63,22 +63,29 @@ git clone <url> projectname
 
 # 拉取指定分支的代码, -b:表示选择分支
 git clone -b <branchname> <url>
+git clone -b gh-pages https://xxx/xxx/nsytm.github.io.git Note-Docs
 ```
 
-#### 2.2 克隆代码报错
+#### 2.3克隆代码报错
 
 ```
 # 报错一
-fatal: unable to access 'https://github.com/nsytm/remote.repository.name.git/': SSL certificate problem: unable to get local issuer certificate
+fatal: unable to access 'https://xxx/xxx/remote.repository.name.git/': SSL certificate problem: unable to get local issuer certificate
 
-# 解决方法, 取消 git 对 SSL 的检验
+# 解决方法: 取消Git对SSL的检验
 git config --global http.sslVerify "false"
 
 # 报错二
+fatal: unable to access 'https://xxx/xxx/remote.repository.name.git/': OpenSSL SSL_read: Connection was aborted, errno 10053
+
+# 解决方法: Git默认限制推送的大小, 运行命令更改限制大小即可
+git config --global http.postBuffer 524288000
+
+
 
 ```
 
-### 3.第一次使用git提交代码
+### 3.使用Git提交代码
 
 #### 3.1 创建并进入目录
 
@@ -106,7 +113,7 @@ git remote add <shortname> <url>
 git clone [url]
 
 # git clone是一个复合命令, 相当于连续执行了下面三个命令
-git remote add origin https://github.com/nsytm/remote.repository.name.git
+git remote add origin https://xxx/xxx/remote.repository.name.git
 git fetch
 git checkout master
 ```
@@ -151,7 +158,7 @@ git push <远程主机名> <本地分支名>:<远程分支名>
 git push <远程主机名> <本地分支名>
 ```
 
-### 4.git基本命令
+### 4.Git基本命令
 
 #### 4.1 创建仓库命令
 
