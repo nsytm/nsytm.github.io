@@ -23,7 +23,7 @@ windows安装：进入网站 https://git-scm.com/ 下载安装，然后在cmd命
 
 #### 1.1 配置用户名和邮箱
 
-```
+```cmd
 # 仅对当前仓库有效
 git config --local user.name "pgl"
 git config --local user.email "501143xxx@qq.com"
@@ -35,7 +35,7 @@ git config --global user.email "501143xxx@qq.com"
 
 #### 1.2 查看配置信息
 
-```
+```cmd
 # 检查信息是否写入成功
 git config --list 
 
@@ -48,13 +48,13 @@ git config user.email
 
 #### 2.1 右键点击git bash here, 进入git命令窗口, 指定本地路径, 使用一个空的文件夹来存放项目代码
 
-```
+```cmd
 cd /e/daota
 ```
 
 #### 2.2 克隆远程仓库代码到本地
 
-```
+```cmd
 # 默认情况下, 根据url最后一个 / 之后的项目名称, 创建本地项目目录 
 git clone <url>
 
@@ -89,7 +89,7 @@ git config --global http.postBuffer 524288000
 
 #### 3.1 创建并进入目录
 
-```
+```cmd
 # 创建目录, -p:表示递归创建
 mkdir -p /e/github/test
 ```
@@ -98,7 +98,7 @@ mkdir -p /e/github/test
 
 ###### 3.2.1 方式一
 
-```
+```cmd
 # 初始化当前目录为本地仓库, 生成.git配置文件 (可以使用 ls -ah 命令查看.git文件)
 git init
 
@@ -108,7 +108,7 @@ git remote add <shortname> <url>
 
 ###### 3.2.2 方式二
 
-```
+```cmd
 # 默认会拉取远程仓库中的所有内容
 git clone [url]
 
@@ -120,7 +120,7 @@ git checkout master
 
 #### 3.3 git add 命令可将文件添加到暂存区
 
-```
+```cmd
 # 添加一个或多个文件到暂存区
 git add [file1] [file2] ...
 git add qq.txt weixin.txt
@@ -135,7 +135,7 @@ git add .
 
 #### 3.4 git commit 命令将暂存区内容添加到本地仓库中
 
-```
+```cmd
 注意: 执行 commit 提交代码前, 要先拉取最新的代码, 使用 git fetch 或 git pull 命令
 
 # 提交暂存区所有文件到本地仓库中, message:表示备注信息
@@ -144,27 +144,23 @@ git commit -m [message]
 # 提交暂存区的指定文件到仓库区
 git commit [file1] [file2] ... -m [message]
 
--a:表示修改或删除文件后不需要执行 git add 命令, 可以直接执行 commit, 但是新文件还是要 add
+# -a:表示修改或删除文件后不需要执行 git add 命令, 可以直接执行 commit, 但是新文件还是要 add
 git commit -a
 ```
 
 #### 3.4 git push 命令用于从将本地的分支版本上传到远程并合并
 
-```
-# 提交代码到远程仓库
+```cmd
+# 提交代码到远程仓库。
 git push <远程主机名> <本地分支名>:<远程分支名>
-
-# 如果本地分支名与远程分支名相同，则可以省略冒号
-git push <远程主机名> <本地分支名>
-
-
+git push origin gh-pages:master
 ```
 
 ### 4.Git基本命令
 
 #### 4.1 创建仓库命令
 
-```
+```cmd
 # 初始化仓库
 git init
 
@@ -172,7 +168,68 @@ git init
 git clone [url]
 ```
 
-#### 4.1 创建仓库命令
+#### 4.2 git branch
+
+```cmd
+# 列出本地分支 (名称前面加*号的是当前的分支)
+git branch
+
+# 列出远程分支
+git branch -r
+
+# 列出所有分支 (红色表示远程分支)
+git branch -a
+
+# 列出本地分支与远程分支的映射关系
+git branch -vv
+
+
+```
+
+#### 4.3 git push
+
+```cmd
+# 命令用于将本地分支的更新，推送到远程主机。
+# 远程主机名: 远程仓库别名
+git push <远程主机名> <本地分支名>:<远程分支名>
+git push origin gh-pages:master
+
+# 省略远程分支名，表示本地分支与远程分支同名，如果该远程分支不存在，则会被新建。
+git push origin gh-pages
+
+# 省略本地分支名，表示删除指定的远程分支，因为这等同于推送一个空的本地分支到远程分支。
+git push origin :gh-pages
+# 等同于
+git push origin --delete gh-pages
+
+# 如果当前分支与远程分支之间存在追踪关系，则本地分支和远程分支都可以省略。
+# 表示将当前分支推送到origin主机的对应分支。
+git push origin
+
+# 如果当前分支只有一个追踪分支，那么主机名都可以省略。
+git push
+
+# 如果当前分支与多个主机存在追踪关系，则可以使用-u选项指定一个默认主机。
+git push -u origin master
+
+```
+
+#### 4.4 git  remote
+
+```cmd
+# 显示当前远程仓库的别名
+git remote
+
+# 显示所有远程仓库
+git remote -v
+
+# 显示某个远程仓库的信息
+git remote show [remote]
+
+
+```
+
+
 
 
 ### 5.git分支管理
@@ -183,7 +240,7 @@ git clone [url]
 
 * 查看分支
 
-```
+```cmd
 # 查看本地分支
 git branch
 
@@ -199,7 +256,7 @@ git branch -vv
 
 * 修改分支名称
 
-```
+```cmd
 # 将 oldname 修改为 newname
 git branch -m oldname newname
 
@@ -212,7 +269,7 @@ git push origin -d oldname
 
 * 新建分支
 
-```
+```cmd
 # 新建dev分支，并切换。仅切换，则去掉参数 -b
 git checkout -b dev
 
@@ -225,7 +282,7 @@ git push origin dev
 
 * 删除分支
 
-```
+```cmd
 # 删除本地dev分支
 git branch -d dev
 
