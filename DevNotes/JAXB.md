@@ -2,7 +2,7 @@
 layout: default
 title: JAXB
 parent: DevNotes
-nav_order: 2
+nav_order: 0
 ---
 
 # JAXB

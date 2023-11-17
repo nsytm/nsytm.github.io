@@ -2,7 +2,7 @@
 layout: default
 title: Git
 parent: DevNotes
-nav_order: 1
+nav_order: 0
 ---
 
 # Git
