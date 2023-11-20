@@ -24,7 +24,8 @@ nav_order: 0
 
 参数说明：  
 clean：删除target目录  
-install：把打好的包发布至本地仓库，以备本地的其它项目作为依赖使用  
+install：把打好的包安装到本地仓库，以便其他项目可以引用  
+package：只生成包，不安装到本地仓库
 -pl：构建指定模块  
 -am：构建指定模块的依赖模块
 
@@ -34,8 +35,16 @@ install：把打好的包发布至本地仓库，以备本地的其它项目作�
 mvn clean install -pl module-1 -Dmaven.test.skip=true -am
 ```
 
-构建指定模块（踩坑，module-1如果引用了其它的公共模块common，，那么在执行此命令打包的时候，common模块后续提交的代码都不会打在jar包里面）
+构建指定模块
 
 ```bash
 mvn clean install -pl module-1 -Dmaven.test.skip=true
 ```
+
+对整个项目进行打包
+
+```bash
+mvn clean install -Dmaven.test.skip=true
+```
+
+tip：如果是多模块项目（父子结构）项目，请使用 ”构建指定模块及其依赖模块“ 命令或者在父工程使用 ”对整个项目进行打包“ 命令！
