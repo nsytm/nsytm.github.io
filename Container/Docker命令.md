@@ -22,6 +22,37 @@ nav_order: 0
 
 #### 1.1、帮助启动命令
 
+docker帮助文档：
+
+```bash
+docker --help
+```
+
+查看docker服务状态：  
+Active: active (running) 即表示服务为正在运行状态。
+
+```bash
+systemctl status docker
+``` 
+
+启动docker服务：
+
+```bash
+systemctl start docker
+```
+
+停止docker服务：
+
+```bash
+systemctl stop docker
+```
+
+重启docker服务：
+
+```bash
+systemctl restart docker
+```
+
 #### 1.2、镜像命令
 
 #### 1.3、容器命令
@@ -49,7 +80,7 @@ bash:交互式Shell。
 docker exec -it <container_id> bash
 ```
 
-容器与宿主机互相复制文件
+容器与宿主机互相复制文件：
 
 ```bash
 docker cp <container_id>:<container_path> <local_path>
