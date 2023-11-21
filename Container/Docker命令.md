@@ -74,7 +74,7 @@ docker exec：在正在运行的容器中执行命令；
 -i：交互式操作；  
 -t：终端；  
 container_id：容器ID或名称；  
-bash:交互式Shell。
+bash：交互式Shell。
 
 ```bash
 docker exec -it <container_id> bash
@@ -85,4 +85,23 @@ docker exec -it <container_id> bash
 ```bash
 docker cp <container_id>:<container_path> <local_path>
 docker cp <local_path> <container_id>:<container_path>
+```
+
+查看容器的端口映射情况：  
+80/tcp -> 0.0.0.0:32768，表示容器内的 80 端口映射到了主机的 32768 端口上。
+
+```bash
+docker port 容器ID/名称
+```
+
+查看容器内运行的所有进程：
+
+```bash
+docker top 容器ID/名称
+```
+
+查看容器的日志：
+
+```bash
+docker logs 容器ID/名称
 ```
