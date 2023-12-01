@@ -1,9 +1,8 @@
 ---
 layout: default
 title: Linux 命令
+parent: Linux
 nav_order: 0
-has_children: true
-permalink: docs/Linux
 ---
 
 # Linux 命令
@@ -44,7 +43,7 @@ mkdir -m 755 -p /logs/20231201
 ```
 
 设置文件或目录的权限：  
--R：递归修改权限
+-R：对目前目录下的所有文件与子目录进行相同的权限变更(即以递归的方式逐个变更)
 
 ```bash
 chmod -R 765 /logs/20231201
