@@ -48,3 +48,7 @@ mvn clean install -Dmaven.test.skip=true
 ```
 
 tip：如果是多模块项目（父子结构）项目，请使用 ”构建指定模块及其依赖模块“ 命令或者在父工程使用 ”对整个项目进行打包“ 命令！
+
+### 2、GAV坐标
+
+[什么GAV坐标？参考文档：](https://blog.csdn.net/qq_46073180/article/details/132959288)
